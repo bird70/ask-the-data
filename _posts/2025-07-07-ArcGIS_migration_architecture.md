@@ -2,7 +2,6 @@
 
 Migrating geospatial data workflows from traditional on-premises ArcGIS Server environments to modern, cloud-native architectures is a complex process that involves several architectural decisions and tradeoffs. This post explores the options and considerations when moving a feature service based on ArcGIS Server and a local SDE (Spatial Database Engine) MSSQLServer database to cloud-based solutions, focusing on two main approaches: a lift-and-shift migration to AWS and a serverless, SaaS-integrated workflow leveraging ArcGIS Online.
 
-
 ## The On-Premises Baseline
 
 Traditionally, many organizations have managed their geospatial data using:
@@ -10,6 +9,8 @@ Traditionally, many organizations have managed their geospatial data using:
 - **ArcGIS Server**: Hosting feature services for web and desktop GIS clients.
 - **SDE (ArcSDE) with MSSQLServer**: Storing spatial data in a local enterprise geodatabase.
 - **ArcGIS Pro**: Used for data processing, scripting, and ETL tasks, often running on dedicated servers.
+
+![On-premises source architecture](assets/images/ArcGIS_Origin_Architecture.svg)
 
 While this setup offers full control and integration with enterprise systems, it comes with significant operational overhead, including hardware maintenance, software updates, and scaling challenges.
 
@@ -49,6 +50,8 @@ A more modern approach is to re-architect the workflow using cloud-native and Sa
 - **Processing**: AWS Lambda functions process the data (e.g., validation, transformation, conversion to GeoPackage).
 - **Data Storage**: Processed data is appended to an ArcGIS Online Feature Layer, which is SaaS-hosted and can ingest data from GeoPackages.
 
+![Re-architected cloud-first configuration for ArcGIS processing and hosting](assets/images/ArcGIS_Target_Architecture.svg)
+
 ### Pros
 
 - **No Server Maintenance**: No need to manage EC2 instances or database servers.
@@ -59,7 +62,7 @@ A more modern approach is to re-architect the workflow using cloud-native and Sa
 ### Cons
 
 - **Workflow Redesign**: Requires rethinking data processing and integration logic for stateless, event-driven execution.
-- **Limits and Quotas**: ArcGIS Online has limits on feature layer size, API calls, and data ingestion rates (this latter point means that we are considering upgrading to an M2 hosted feature store in ArcGIS Online, to provide dedicated I/O).
+- **Limits and Quotas**: ArcGIS Online has limits on feature layer size, API calls, and data ingestion rates (this latter point means that we are considering upgrading to an M2 hosted feature store in ArcGIS Online, to provide dedicated I/O). Storing large data volumes in ArcGIS Online may be cost-prohibitive.
 - **Data Model Changes**: Some advanced geodatabase features (e.g., versioning, complex relationships) may not be supported in ArcGIS Online.
 
 ---
@@ -79,7 +82,7 @@ A more modern approach is to re-architect the workflow using cloud-native and Sa
 
 ## Recommended Approach
 
-For organizations seeking to minimize operational overhead and maximize the benefits of cloud and SaaS, the **serverless and ArcGIS Online-based workflow** is often the best long-term solution. By leveraging S3 for intermediate storage, AWS Lambda for processing, and ArcGIS Online for data hosting and sharing, you can build a scalable, cost-effective, and modern geospatial data pipeline.
+For organizations seeking to minimize operational overhead and maximize the benefits of cloud and SaaS, the **serverless and ArcGIS Online-based workflow** may be the best long-term solution. By leveraging S3 for intermediate storage, AWS Lambda for processing, and ArcGIS Online for data hosting and sharing, you can build a scalable, cost-effective, and modern geospatial data pipeline.
 
 **Example Workflow:**
 
@@ -92,7 +95,7 @@ For organizations seeking to minimize operational overhead and maximize the bene
 
 ## Conclusion
 
-Migrating from on-premises ArcGIS Server and SDE to the cloud is an opportunity to modernize your geospatial workflows. While a lift-and-shift approach offers a quick path to the cloud, embracing serverless and SaaS solutions like ArcGIS Online can deliver greater agility, potentially lower costs, and reduced maintenance in the long run. The right choice depends on your organization's requirements, existing investments, and appetite for change.
+Migrating from on-premises ArcGIS Server and SDE to the cloud is an opportunity to modernize your geospatial workflows. While a lift-and-shift approach offers a quick path to the cloud, embracing serverless and SaaS solutions like ArcGIS Online can deliver greater agility, lower costs, and reduced maintenance in the long run. The right choice depends on your organization's requirements, existing investments, and appetite for change.
 
 ---
 
