@@ -59,7 +59,7 @@ A more modern approach is to re-architect the workflow using cloud-native and Sa
 ### Cons
 
 - **Workflow Redesign**: Requires rethinking data processing and integration logic for stateless, event-driven execution.
-- **Limits and Quotas**: ArcGIS Online has limits on feature layer size, API calls, and data ingestion rates.
+- **Limits and Quotas**: ArcGIS Online has limits on feature layer size, API calls, and data ingestion rates (this latter point means that we are considering upgrading to an M2 hosted feature store in ArcGIS Online, to provide dedicated I/O).
 - **Data Model Changes**: Some advanced geodatabase features (e.g., versioning, complex relationships) may not be supported in ArcGIS Online.
 
 ---
@@ -79,11 +79,11 @@ A more modern approach is to re-architect the workflow using cloud-native and Sa
 
 ## Recommended Approach
 
-For organizations seeking to minimize operational overhead and maximize the benefits of cloud and SaaS, the **serverless and ArcGIS Online-based workflow** is often the best long-term solution. By leveraging S3 for storage, Lambda for processing, and ArcGIS Online for data hosting and sharing, you can build a scalable, cost-effective, and modern geospatial data pipeline.
+For organizations seeking to minimize operational overhead and maximize the benefits of cloud and SaaS, the **serverless and ArcGIS Online-based workflow** is often the best long-term solution. By leveraging S3 for intermediate storage, AWS Lambda for processing, and ArcGIS Online for data hosting and sharing, you can build a scalable, cost-effective, and modern geospatial data pipeline.
 
 **Example Workflow:**
 
-1. **User uploads data** (e.g., shapefile, CSV) to an S3 bucket.
+1. **User uploads data** (e.g., NetCDF, shapefile, CSV) to an S3 bucket.
 2. **S3 event triggers a Lambda function** to process the data, convert it to a GeoPackage, and perform any necessary validation or transformation.
 3. **Lambda appends the processed data** to an ArcGIS Online Feature Layer via the ArcGIS REST API.
 4. **Data is immediately available** for visualization, analysis, and sharing in ArcGIS Online.
@@ -92,7 +92,7 @@ For organizations seeking to minimize operational overhead and maximize the bene
 
 ## Conclusion
 
-Migrating from on-premises ArcGIS Server and SDE to the cloud is an opportunity to modernize your geospatial workflows. While a lift-and-shift approach offers a quick path to the cloud, embracing serverless and SaaS solutions like ArcGIS Online can deliver greater agility, lower costs, and reduced maintenance in the long run. The right choice depends on your organization's requirements, existing investments, and appetite for change.
+Migrating from on-premises ArcGIS Server and SDE to the cloud is an opportunity to modernize your geospatial workflows. While a lift-and-shift approach offers a quick path to the cloud, embracing serverless and SaaS solutions like ArcGIS Online can deliver greater agility, potentially lower costs, and reduced maintenance in the long run. The right choice depends on your organization's requirements, existing investments, and appetite for change.
 
 ---
 
