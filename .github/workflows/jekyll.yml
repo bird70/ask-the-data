@@ -36,12 +36,12 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2' # Use the latest stable Ruby
+          ruby-version: '3.2' # Use the latest supported Ruby for Jekyll/nokogiri
           bundler-cache: true
       - name: Install dependencies
         run: bundle install
       - name: Build with Jekyll
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --baseurl "/ask-the-data"
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
