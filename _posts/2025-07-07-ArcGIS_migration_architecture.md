@@ -1,8 +1,7 @@
----
 # Solution Architecture Choices and Tradeoffs: Migrating ArcGIS Data Workflows from On-Premises to Microservices and ArcGIS Online SaaS
 
 Migrating geospatial data workflows from traditional on-premises ArcGIS Server environments to modern, cloud-native architectures is a complex process that involves several architectural decisions and tradeoffs. This post explores the options and considerations when moving a feature service based on ArcGIS Server and a local SDE (Spatial Database Engine) MSSQLServer database to cloud-based solutions, focusing on two main approaches: a lift-and-shift migration to AWS and a serverless, SaaS-integrated workflow leveraging ArcGIS Online.
----
+
 
 ## The On-Premises Baseline
 
