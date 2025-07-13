@@ -19,4 +19,8 @@ Here's the process used:
 
 [AWS ArcGIS Lambda Layer repo](https://github.com/bird70/AWS_ArcGIS_Lambda_Layer)
 
+An example project where the above layer is associated with a Lambda function ArcGIS API script can be found here:
+
+[AWS NetCDF to ArcGIS Online Feature Service](https://github.com/bird70/AWS_NetCDF_2_ArcGIS_Online_Feature/)
+
 
