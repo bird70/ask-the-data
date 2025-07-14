@@ -1,6 +1,9 @@
 ---
 layout: post
 author: Tilmann Steinmetz
+description: Scripting the Esri Mosaic Dataset Creation using Esri's Mosaic Dataset Configuration Scripts (MDCS) in Powershell, for repeatable workflows with massive raster data collections.
+title: Scripting Mosaic Datasets - The Esri multidimensional data model
+date: 2023-12-19
 image: /assets/images/GUID-31E04AE1-F88D-41BF-A6B4-E7EB8E5A0853-web.png
 ---
 
