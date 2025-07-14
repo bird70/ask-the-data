@@ -1,3 +1,11 @@
+---
+title: ArcGIS API for Python in AWS Lambda
+description: Exploring the feasibility of running the ArcGIS API for Python in AWS Lambda, including building a custom container layer for geoprocessing tasks.
+layout: post
+author: Tilmann Steinmetz
+date: 2025-07-11
+---
+
 # ArcGIS API for Python == easy to run in AWS Lambda?
 
 The ArcGIS API for Python is extremely handy when it comes to manipulating both services and data in either ArcGIS Online or ArcGIS Enterprise. It can be used on Linux or Windows, making it an attractive candidate library to use for geoprocessing scripts.

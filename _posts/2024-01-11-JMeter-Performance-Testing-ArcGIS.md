@@ -1,6 +1,8 @@
 ---
 layout: post
 author: Tilmann Steinmetz
+title: JMeter Performance Testing for ArcGIS Enterprise Image and Feature services
+description: Using Apache JMeter to test the performance of ArcGIS Enterprise Image and Feature services, to establish a baseline for performance and throughput.
 ---
 
 When working with ArcGIS web services, sooner or later the question comes up: "how good will performance be, given expected usage?" Or: "how will publishing and using a certain set of services be affected by _the rest_ of the services running in the same environment?
