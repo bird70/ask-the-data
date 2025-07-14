@@ -2,6 +2,14 @@ title: ask the data
 
 repository: bird70/ask-the-data
 url: https://bird70.github.io/ask-the-data
-permalink: /:title/
+permalink: pretty
 
+description: A blog about data, GIS, and cloud technology.
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-compress-images
+  
 theme: minima
