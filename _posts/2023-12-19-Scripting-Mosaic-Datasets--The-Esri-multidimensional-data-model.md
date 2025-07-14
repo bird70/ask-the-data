@@ -31,10 +31,10 @@ To understand how the Mosaic Dataset can be useful, imagine having to work with 
 - If your rasters contain data for different attributes but for the same area, then you'll have a stack of rasters of which you can see the top one only. Selecting only the attribute which you are interested in showing as a map requires making all other layers inactive/invisible, leaving only the one for the attribute you want.
 - A variation of the above would be to stack rasters which are all for the same area but different points in time. These time slices would be very hard to visualise if you had to deal with, say, dozens, let alone, thousands of rasters.
 
-![Continuous data coverage in a Mosaic Dataset]({{site.url}}/assets/images/GUID-063866C0-4A61-487C-90BE-39CC737495F9-web.png "Mosaic Datasets can cover continuous areas")
+![Continuous data coverage in a Mosaic Dataset]({{ "/assets/images/GUID-063866C0-4A61-487C-90BE-39CC737495F9-web.png" | absolute_url }} "Mosaic Datasets can cover continuous areas")
 _Figure:_ Mosaic Datasets can cover continuous areas (Credit: Esri)
 
-![Discontinuous data coverage in a Mosaic Dataset]({{site.url}}/assets/images/GUID-31E04AE1-F88D-41BF-A6B4-E7EB8E5A0853-web.png "Example of Mosaic Dataset that covers discontinuous area")
+![Discontinuous data coverage in a Mosaic Dataset]({{ "/assets/images/GUID-31E04AE1-F88D-41BF-A6B4-E7EB8E5A0853-web.png" | absolute_url }} "Example of Mosaic Dataset that covers discontinuous area")
 _Figure:_ Example of Mosaic Dataset that covers discontinuous area (Credit: Esri)
 
 The Mosaic dataset can be thought of as a database where each raster that is added to it becomes a single record. When you request a certain record (or a set of records) to be retrieved from the database, the rest is inactive and you can display the result on your map. To make this possible, rasters are added to the database (mosaic dataset) along with attributes which allow specifying the parameters for a search.

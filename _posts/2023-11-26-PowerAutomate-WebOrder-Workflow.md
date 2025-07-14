@@ -13,16 +13,16 @@ move away from it but it wasn't something we had any control over).
 # PowerAutomate Workflow for Web Orders
 As an initial improvement, I designed a workflow in Microsoft PowerAutomate which would parse the contents of the email and create a Microsoft  Planner Task that could be assigned to a team member. It was triggered by new emails arriving in a specific mailbox, and it would extract the relevant information from the email and create a task in a Planner Board.
 
-![PowerAutomate Workflow]({{site.url}}/assets/images/PA1Screenshot.png "workflow")
+![PowerAutomate Workflow]({{ "/assets/images/PA1Screenshot.png" | absolute_url }} "workflow")
 
-![PowerAutomate Workflow]({{site.url}}/assets/images/PA2Screenshot.png "workflow")
+![PowerAutomate Workflow]({{ "/assets/images/PA2Screenshot.png" | absolute_url }} "workflow")
 
 The workflow was able to do that easily for the volume of orders arriving in our mailbox and as an outcome, we had a nice visual way to keep track of orders.
 
 The Planner Board (Microsoft Planner) was set up such, that we had different swimlanes for the different states of the order - so the team could move them from "Open"
 to "Complete" via manual state transitions. 
 
-![Planner Board]({{site.url}}/assets/images/PlannerScreen-Shot-2019.png "planner board example")
+![Planner Board]({{ "/assets/images/PlannerScreen-Shot-2019.png" | absolute_url }} "planner board example")
 
 
 It gave us a way to have an easy way to track all orders - and for the first time, handover between different team members didn't require long explanations!
@@ -44,6 +44,6 @@ With the simple workflow above though, we were at least able to give customers i
 taken good care of, while internally we were delighted that at last we had a good overview of which orders were in what state and who was dealing with them.
 
 
-![Workflow4]({{site.url}}/assets/images/PA4Screenshot.png "areas")
-![Workflow7]({{site.url}}/assets/images/PA7Screenshot.png "areas")
+![Workflow4]({{ "/assets/images/PA4Screenshot.png" | absolute_url }} "areas")
+![Workflow7]({{ "/assets/images/PA7Screenshot.png" | absolute_url }} "areas")
 

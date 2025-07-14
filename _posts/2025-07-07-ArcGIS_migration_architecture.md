@@ -20,7 +20,7 @@ Traditionally, many organizations have managed their geospatial data using:
 - **SDE (ArcSDE) with MSSQLServer**: Storing spatial data in a local enterprise geodatabase.
 - **ArcGIS Pro**: Used for data processing, scripting, and ETL tasks, often running on dedicated servers.
 
-![On-premises source architecture]({{site.url}}/assets/images/ArcGIS_Origin_Architecture.svg)
+![On-premises source architecture]({{ "/assets/images/ArcGIS_Origin_Architecture.svg" | absolute_url }})
 
 While this setup offers full control and integration with enterprise systems, it comes with significant operational overhead, including hardware maintenance, software updates, and scaling challenges.
 
@@ -60,7 +60,7 @@ A more modern approach is to re-architect the workflow using cloud-native and Sa
 - **Processing**: AWS Lambda functions process the data (e.g., validation, transformation, conversion to GeoPackage).
 - **Data Storage**: Processed data is appended to an ArcGIS Online Feature Layer, which is SaaS-hosted and can ingest data from GeoPackages.
 
-![Re-architected cloud-first configuration for ArcGIS processing and hosting]({{site.url}}/assets/images/ArcGIS_Target_Architecture.svg)
+![Re-architected cloud-first configuration for ArcGIS processing and hosting]({{ "/assets/images/ArcGIS_Target_Architecture.svg" | absolute_url }})
 
 ### Pros
 

@@ -10,7 +10,7 @@ Happy New Year!
 
 Recently I've used Esri's Arcade script language, which is similar to JavaScript, to populate fields that are displayed in a Web App popup when a user clicks on the map. Arcade is used in the web map configuration.
 
-![Formatted popup with conditional display of images and ]({{site.url}}/assets/images/ArcadeFormattedPopup.jpg "Formatted popup with conditional display of images and output from feature set query (above the image)")
+![Formatted popup with conditional display of images and ]({{ "/assets/images/ArcadeFormattedPopup.jpg" | absolute_url }} "Formatted popup with conditional display of images and output from feature set query (above the image)")
 _Figure:_ Formatted popup with conditional display of images and output from feature set query (above the image)
 
 [Arcade script expressions](https://developers.arcgis.com/arcade/) in ArcGIS Web Maps can be used for various tasks, including querying feature layer data and returning results as formatted popups. (So this post refers specifically to the "popup profile" in Arcade.)
