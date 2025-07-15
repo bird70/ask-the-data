@@ -26,5 +26,7 @@ Notable projects that I've worked (or collaborated) on recently:
 ## Coursework, Tutorials etc.
 
 [Statistical Inference Summaries](https://github.com/bird70/dtSA_summary_transcripts/)
+
 [Authoring Collaborative Research Projects with Quarto](https://github.com/bird70/quarto/)
+
 [Fundamentals of AI Engineering and Applications](https://github.com/bird70/fundamentals-of-ai-engineering-principles-and-practical-applications-6026542/)
