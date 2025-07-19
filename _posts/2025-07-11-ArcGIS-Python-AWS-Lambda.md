@@ -1,9 +1,22 @@
 ---
+layout: single
+author_profile: true
+read_time: true
+comments: false
+share: true
+related: true
 title: ArcGIS API for Python in AWS Lambda
-description: Exploring the feasibility of running the ArcGIS API for Python in AWS Lambda, including building a custom container layer for geoprocessing tasks.
-layout: post
-author: Tilmann Steinmetz
 date: 2025-07-11
+categories:
+  - gis
+  - cloud
+  - python
+tags:
+  - arcgis
+  - aws
+  - lambda
+  - python
+excerpt: "Exploring the feasibility of running the ArcGIS API for Python in AWS Lambda, including building a custom container layer for geoprocessing tasks."
 ---
 
 # ArcGIS API for Python == easy to run in AWS Lambda?

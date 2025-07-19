@@ -1,8 +1,22 @@
 ---
-layout: post
-author: Tilmann Steinmetz
-description: Using arcpy and ArcGIS Python API to script regular updates to a pre-styled Vector Tile Layer in ArcGIS Online or ArcGIS Enterprise.
+layout: single
+author_profile: true
+read_time: true
+comments: false
+share: true
+related: true
 title: Automatic Vector Tile Layer Updates, using arcpy and ArcGIS Python API
+date: 2024-01-03
+categories:
+  - gis
+  - automation
+  - python
+tags:
+  - arcgis
+  - python
+  - vector-tiles
+  - automation
+excerpt: "Using arcpy and ArcGIS Python API to script regular updates to a pre-styled Vector Tile Layer in ArcGIS Online or ArcGIS Enterprise."
 ---
 
 Working with Web GIS layers in ArcGIS Online or ArcGIS Enterprise can be very easy, as long as it's done interactively via a web browser or an Esri client application such as ArcGIS Pro.

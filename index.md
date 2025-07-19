@@ -1,5 +1,6 @@
 ---
-title: blog
+layout: home
+author_profile: true
 ---
 
 Hi - I'm Tilmann and I work with data in many forms. This blog documents some of the work that I have been busy with lately, always in the hope that others will find it useful as well - and also to keep the memory fresh for myself.

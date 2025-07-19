@@ -1,8 +1,8 @@
 ---
-layout: default
+layout: single
 title: CV
 permalink: /cv/
-nav_order: 3
+author_profile: true
 ---
 
 # Curriculum Vitae

@@ -1,9 +1,24 @@
 ---
-layout: post
-author: Tilmann Steinmetz
+layout: single
+author_profile: true
+read_time: true
+comments: false
+share: true
+related: true
 title: Arcade Popups in ArcGIS web map, with Conditional Display of Images
-description: Using Esri's Arcade script language to populate fields in a web map popup, with conditional display of images and output from feature set query.
-# image: /assets/images/GUID-31E04AE1-F88D-41BF-A6B4-E7EB8E5A0853-web.png
+date: 2024-01-03
+categories:
+  - gis
+  - scripting
+tags:
+  - arcgis
+  - arcade
+  - popups
+  - webmap
+header:
+  image: /assets/images/ArcadeFormattedPopup.jpg
+  teaser: /assets/images/ArcadeFormattedPopup.jpg
+excerpt: "Using Esri's Arcade script language to populate fields in a web map popup, with conditional display of images and output from feature set query."
 ---
 
 Happy New Year!

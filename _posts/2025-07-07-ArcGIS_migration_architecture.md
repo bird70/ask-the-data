@@ -1,9 +1,25 @@
 ---
+layout: single
+author_profile: true
+read_time: true
+comments: false
+share: true
+related: true
 title: Migrating ArcGIS Data Workflows to the Cloud
-author: Tilmann Steinmetz
-layout: post
-description: Exploring architectural choices and tradeoffs when migrating ArcGIS data workflows from on-premises to cloud-native solutions, including AWS and ArcGIS Online.
 date: 2025-07-07
+categories:
+  - gis
+  - cloud
+  - architecture
+tags:
+  - arcgis
+  - aws
+  - migration
+  - cloud
+header:
+  image: /assets/images/ArcGIS_Origin_Architecture.svg
+  teaser: /assets/images/ArcGIS_Origin_Architecture.svg
+excerpt: "Exploring architectural choices and tradeoffs when migrating ArcGIS data workflows from on-premises to cloud-native solutions, including AWS and ArcGIS Online."
 ---
 
 

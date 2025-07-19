@@ -1,13 +1,25 @@
 ---
-layout: post
-author: Tilmann Steinmetz
-description: Scripting the Esri Mosaic Dataset Creation using Esri's Mosaic Dataset Configuration Scripts (MDCS) in Powershell, for repeatable workflows with massive raster data collections.
+layout: single
+author_profile: true
+read_time: true
+comments: false
+share: true
+related: true
 title: Scripting Mosaic Datasets - The Esri multidimensional data model
 date: 2023-12-19
-image: /assets/images/GUID-31E04AE1-F88D-41BF-A6B4-E7EB8E5A0853-web.png
+categories:
+  - gis
+  - scripting
+tags:
+  - arcgis
+  - mosaic-datasets
+  - powershell
+  - raster
+header:
+  image: /assets/images/GUID-31E04AE1-F88D-41BF-A6B4-E7EB8E5A0853-web.png
+  teaser: /assets/images/GUID-31E04AE1-F88D-41BF-A6B4-E7EB8E5A0853-web.png
+excerpt: "Scripting the Esri Mosaic Dataset Creation using Esri's Mosaic Dataset Configuration Scripts (MDCS) in Powershell, for repeatable workflows with massive raster data collections."
 ---
-
-![]({{ page.image | relative_url }})
 
 The Esri Mosaic Dataset is the foundational data structure for storing and retrieving large numbers of rasters (see next section below).
 
