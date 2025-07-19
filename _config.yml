@@ -10,7 +10,7 @@ description: A blog about data, GIS, and cloud technology.
 # Minimal Mistakes Theme Configuration
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin: "default"
-locale: "en-US"
+locale: "en-NZ"
 title_separator: "-"
 subtitle: "A blog about data, GIS, and cloud technology"
 breadcrumbs: true
@@ -19,7 +19,6 @@ words_per_minute: 200
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-sitemap
   - jekyll-compress-images
   - jekyll-paginate
   - jekyll-sitemap
@@ -39,8 +38,8 @@ author:
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/tilmann-steinmetz/"
     - label: "ORCID"
-      icon: "fab fa-fw fa-orcid"
-      # icon: "fa-regular fa-microscope"
+      # icon: "fab fa-fw fa-orcid"
+      icon: "fab fa-regular fa-microscope"
       url: "https://orcid.org/0000-0003-1392-220X"
 
 # Pagination
