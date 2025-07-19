@@ -29,6 +29,7 @@ plugins:
 # Site Author
 author:
   name: "Tilmann Steinmetz"
+  avatar: "/assets/images/profile-image.jpeg"
   bio: "Data professional working with GIS and cloud technology"
   links:
     - label: "GitHub"
