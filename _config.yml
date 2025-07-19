@@ -30,7 +30,7 @@ plugins:
 author:
   name: "Tilmann Steinmetz"
   avatar: "/assets/images/profile-image.jpeg"
-  bio: "Data professional working with GIS and cloud technology"
+  bio: "Researcher & data professional working with GIS and cloud technology"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -39,8 +39,8 @@ author:
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/tilmann-steinmetz/"
     - label: "ORCID"
-      # icon: "fab fa-fw fa-orcid"
-      icon: "fa-regular fa-microscope"
+      icon: "fab fa-fw fa-orcid"
+      # icon: "fa-regular fa-microscope"
       url: "https://orcid.org/0000-0003-1392-220X"
 
 # Pagination
