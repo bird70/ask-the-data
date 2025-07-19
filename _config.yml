@@ -19,9 +19,9 @@ words_per_minute: 200
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
   - jekyll-compress-images
   - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-gist
   - jekyll-include-cache
 
