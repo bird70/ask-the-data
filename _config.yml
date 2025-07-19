@@ -38,8 +38,8 @@ author:
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/tilmann-steinmetz/"
     - label: "ORCID"
-      # icon: "fab fa-fw fa-orcid"
-      icon: "fab fa-regular fa-microscope"
+      icon: "fab fa-fw fa-orcid"
+      # icon: "fab fa-regular fa-microscope"
       url: "https://orcid.org/0000-0003-1392-220X"
 
 # Pagination
