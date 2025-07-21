@@ -16,9 +16,8 @@ tags:
   - aws
   - lambda
   - python
+toc: false
 excerpt: "Exploring the feasibility of running the ArcGIS API for Python in AWS Lambda, including building a custom container layer for geoprocessing tasks."
-header:
-  teaser: /assets/images/back_of_an_envelope_pic.jpg
 ---
 
 # ArcGIS API for Python == easy to run in AWS Lambda?

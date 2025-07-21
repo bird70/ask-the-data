@@ -18,9 +18,10 @@ comments: false
 share: true
 related: true
 show_date: true
+excerpt: "Automate and streamline metadata management in ArcGIS with the ArcGIS Metadata Tools project, featuring Python scripts and templates for efficient metadata handling."
 ---
 
-## Overview
+# Overview
 
 Ever had to deliver a GIS project with consistent and complete Metadata on every single item in your ArcGIS geodatabase? Or maybe you needed to ensure that all your datasets comply with specific metadata standards? The 
 [ArcGIS Metadata Tools](https://github.com/bird70/ArcGIS-Metadata-Tools) is a project designed to streamline and automate the management of metadata within ArcGIS geodatabases. The repository provides a collection of Python script and metadata template that help GIS professionals efficiently update, validate, and migrate metadata for ArcGIS datasets and services.
