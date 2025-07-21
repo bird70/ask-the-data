@@ -1,3 +1,5 @@
+[![Deploy Jekyll site to GitHub Pages](https://github.com/bird70/ask-the-data/actions/workflows/jekyll.yml/badge.svg?branch=gh-pages)](https://github.com/bird70/ask-the-data/actions/workflows/jekyll.yml)
+
 # ask-the-data
 
 The home of me - my blog about data -handling, -wrangling, -storing, -analysing, -displaying, -loving - TS
