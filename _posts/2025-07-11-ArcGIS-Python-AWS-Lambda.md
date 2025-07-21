@@ -17,6 +17,12 @@ tags:
   - lambda
   - python
 excerpt: "Exploring the feasibility of running the ArcGIS API for Python in AWS Lambda, including building a custom container layer for geoprocessing tasks."
+toc: true
+header:
+  teaser: /assets/images/back_of_an_envelope_pic.jpg
+  image: /assets/images/back_of_an_envelope_pic.jpg
+  # overlay_image: /assets/images/arcgis_lambda_overlay.jpg
+  # caption: "Image by [Bird70](
 ---
 
 # ArcGIS API for Python == easy to run in AWS Lambda?
@@ -29,8 +35,8 @@ My initial thought was to run the process in a container in AWS, possibly using 
 
 Turns out that the answer is yes, but it was a bit of a juggle - as we also needed some other libraries in this case, and we wanted to keep the Lambda function extra-small. For various Lambda functions to be able to import the ArcGIS library in future, I settled on a custom container, built in Docker locally.
 
-
-![The best architectures are designed on the back of an envelope](../assets/images/back_of_an_envelope_pic.jpg)
+![The best architectures are designed on the back of an envelope]({{ "/assets/images/back_of_an_envelope_pic.jpg" | absolute_url }} "The best architectures are designed on the back of an envelope")
+_Figure:_ The best architectures are designed on the back of an envelope
 
 Lambda layers have file size limit (~ 250 MB unzipped), which in my case worked out to be a zipped upload of ca. 65 MB. (Have a look at the install in ArcGIS Pro to get an idea of the size of the ArcGIS API used there - it's way bigger, and that doesn't include the other libraries yet, such as NetCDF, geopackage, numpy, pandas etc. that we needed.
 
