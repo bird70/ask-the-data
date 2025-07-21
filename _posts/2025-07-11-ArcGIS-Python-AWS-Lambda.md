@@ -29,14 +29,16 @@ My initial thought was to run the process in a container in AWS, possibly using 
 
 Turns out that the answer is yes, but it was a bit of a juggle - as we also needed some other libraries in this case, and we wanted to keep the Lambda function extra-small. For various Lambda functions to be able to import the ArcGIS library in future, I settled on a custom container, built in Docker locally.
 
+[Plan best done on the back of an envelope](https://github.com/bird70/AWS_ArcGIS_Lambda_Layer/blob/main/back_of_an_envelope_pic.jpg)
+
 Lambda layers have file size limit (~ 230 MB unzipped), which in my case worked out to be a zipped upload of ca. 90 MB. (Have a look at the install in ArcGIS Pro to get an idea of the size of the ArcGIS API used there - it's way bigger, and that doesn't include the other libraries yet, such as NetCDF, geopackage, numpy, pandas etc. that we needed.
 
 Here's the process used:
 
-1) Use Docker to build a library layer file locally. Use Amazon Linux 2, add what is needed (and remove those parts which we weren't able to include in the package, such as DeepLearning)
-2) Download the (zipped) library layer
-3) upload to AWS to create a new Lambda layer (file size limit for the uploaded Zip file was not easy to meet)
-4) Associate the Lambda layer with a Lambda function (the layer is able to be re-used across many lambda functions)
+  1) Use Docker to build a library layer file locally. Use Amazon Linux 2, add what is needed (and remove those parts which we weren't able to include in the package, such as DeepLearning)
+  2) Download the (zipped) library layer
+  3) upload to AWS to create a new Lambda layer (file size limit for the uploaded Zip file was not easy to meet)
+  4) Associate the Lambda layer with a Lambda function (the layer is able to be re-used across many lambda functions)
 
 [AWS ArcGIS Lambda Layer repo](https://github.com/bird70/AWS_ArcGIS_Lambda_Layer)
 
