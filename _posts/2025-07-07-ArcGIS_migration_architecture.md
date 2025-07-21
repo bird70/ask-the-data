@@ -16,7 +16,7 @@ tags:
   - aws
   - migration
   - cloud
-toc: false
+toc: true
 header:
   image: /assets/images/ArcGIS_Origin_Architecture.svg
   teaser: /assets/images/ArcGIS_Origin_Architecture.svg
