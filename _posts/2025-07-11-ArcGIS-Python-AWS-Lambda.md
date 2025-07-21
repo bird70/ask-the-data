@@ -21,8 +21,6 @@ toc: true
 header:
   teaser: /assets/images/back_of_an_envelope_pic.jpg
   image: /assets/images/back_of_an_envelope_pic.jpg
-  # overlay_image: /assets/images/arcgis_lambda_overlay.jpg
-  # caption: "Image by [Bird70](
 ---
 
 # ArcGIS API for Python == easy to run in AWS Lambda?
