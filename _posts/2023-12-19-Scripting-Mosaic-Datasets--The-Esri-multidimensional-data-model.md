@@ -10,6 +10,7 @@ date: 2023-12-19
 categories:
   - gis
   - scripting
+  - automation
 tags:
   - arcgis
   - mosaic-datasets

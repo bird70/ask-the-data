@@ -3,14 +3,15 @@ title: "ArcGIS Metadata Tools: Enhancing Metadata Management"
 date: 2023-07-19
 author: Tilmann Steinmetz
 categories:
-  - ArcGIS
-  - Metadata
-  - Tools
+  - gis
+  - metadata
+  - tools
+  - automation
 tags:
-  - Python
-  - ArcGIS
-  - Metadata
-  - Automation
+  - python
+  - arcgis
+  - metadata
+  - automation
 layout: single
 author_profile: true
 read_time: true
@@ -23,8 +24,9 @@ excerpt: "Automate and streamline metadata management in ArcGIS with the ArcGIS 
 
 # Overview
 
-Ever had to deliver a GIS project with consistent and complete Metadata on every single item in your ArcGIS geodatabase? Or maybe you needed to ensure that all your datasets comply with specific metadata standards? The 
-[ArcGIS Metadata Tools](https://github.com/bird70/ArcGIS-Metadata-Tools) is a project designed to streamline and automate the management of metadata within ArcGIS geodatabases. The repository provides a collection of Python script and metadata template that help GIS professionals efficiently update, validate, and migrate metadata for ArcGIS datasets and services.
+Ever had to deliver a GIS project with consistent and complete Metadata on every single item in your ArcGIS geodatabase? Or maybe you needed to ensure that all your datasets comply with specific metadata standards? 
+
+The [ArcGIS Metadata Tools](https://github.com/bird70/ArcGIS-Metadata-Tools) is a project designed to streamline and automate the management of metadata within ArcGIS geodatabases. The repository provides a collection of Python script and metadata template that help GIS professionals efficiently update, validate, and migrate metadata for ArcGIS datasets and services.
 
 ## Key Features
 
