@@ -30,7 +30,7 @@ You may know it from ArcMap or ArcGIS Pro. But there's that other Python library
 
 The answer to this question depends on your specific use case and requirements. Here are some considerations to help you decide:
 
-- **arcpy** is tightly integrated with ArcGIS Desktop and provides access to the full range of geoprocessing tools and functions. It is a good choice if you are working with ArcGIS Desktop and need to perform complex geoprocessing tasks.
+- **arcpy** is tightly integrated with ArcGIS Desktop and provides access to the full range of geoprocessing tools and functions. It is a good choice if you are working with ArcGIS Desktop and need to perform complex geoprocessing tasks. It is an important part of ArcGIS Server, too, and you may have seen it used in published Geoprocessing Tools that run on the server, possibly as part of an ArcGIS Enterprise setup. And that's where it gets a bit interesting:
 - **ArcGIS API for Python** is designed to work with ArcGIS Online and ArcGIS Enterprise. It provides access to the full range of geoprocessing tools and functions available in these platforms. It is a good choice if you are working with ArcGIS Online or ArcGIS Enterprise and need to perform complex geoprocessing tasks. 
 However, it is also able to perform administration tasks, such as managing users, groups, and content in ArcGIS Online or ArcGIS Enterprise.
 
