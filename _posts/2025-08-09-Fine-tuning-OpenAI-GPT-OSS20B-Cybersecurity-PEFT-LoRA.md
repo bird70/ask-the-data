@@ -378,7 +378,9 @@ Fine-tuning OpenAI's GPT-OSS20B with PEFT/LoRA provides a powerful approach to c
 
 The combination of the robust base model, efficient fine-tuning techniques, and high-quality cybersecurity datasets creates a powerful tool for organizations looking to enhance their security capabilities with AI. 
 
-The code provided in this post serves as a starting point for your own fine-tuning experiments. See [code repo at](https://github.com/bird70/finetune-gpt-oss-cybersecurity) Feel free to adapt and extend it based on your specific needs and datasets.
+The code provided in this post serves as a starting point for your own fine-tuning experiments. 
+See [Finetuning code repo at](https://github.com/bird70/finetune-gpt-oss-cybersecurity).
+Feel free to adapt and extend it based on your specific needs and datasets.
 
 ## References
 
@@ -386,10 +388,12 @@ The code provided in this post serves as a starting point for your own fine-tuni
 2. [Trendyol Cybersecurity LLM Dataset](https://huggingface.co/Trendyol/Trendyol-Cybersecurity-LLM-Qwen3-32B-Q8_0-GGUF)
 3. [PEFT Library Documentation](https://huggingface.co/docs/peft/index)
 4. [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685)
+5. [Hugging Face Transformers Documentation](https://huggingface.co/docs/transformers/index)
+6. [Code Repository](https://github.com/bird70/finetune-gpt-oss-cybersecurity)
 
 ---
 
 **Note**: This implementation assumes access to appropriate computational resources and datasets. Adjust batch sizes, sequence lengths, and other parameters based on your available hardware and specific requirements.
-Please make sure to follow the permitted uses for the Trendyol dataset and any other datasets you use in your fine-tuning process.
+**Please make sure to follow the permitted uses for the Trendyol dataset and any other datasets you use in your fine-tuning process**.
 
 This example is for educational purposes and may require further adjustments based on your specific use case and environment.
