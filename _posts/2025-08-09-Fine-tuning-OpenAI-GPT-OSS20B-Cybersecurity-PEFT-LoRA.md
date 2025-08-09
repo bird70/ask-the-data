@@ -53,7 +53,7 @@ Parameter-Efficient Fine-Tuning (PEFT) with LoRA allows us to adapt large langua
 
 ## Dataset: Trendyol Cybersecurity LLM
 
-For this fine-tuning exercise, we'll use the cybersecurity dataset from [Trendyol's Cybersecurity LLM](https://huggingface.co/Trendyol/Trendyol-Cybersecurity-LLM-Qwen3-32B-Q8_0-GGUF), which provides high-quality cybersecurity-focused training examples.
+For this fine-tuning exercise, we'll use the cybersecurity dataset from [Trendyol's Cybersecurity LLM](https://huggingface.co/datasets/Trendyol/Trendyol-Cybersecurity-Instruction-Tuning-Dataset), which provides high-quality cybersecurity-focused training examples.
 **Note: Please make sure you read the permitted uses for this dataset**
 
 ## Implementation
@@ -385,7 +385,7 @@ Feel free to adapt and extend it based on your specific needs and datasets.
 ## References
 
 1. [OpenAI GPT-OSS Fine-tuning Guide](https://cookbook.openai.com/articles/gpt-oss/fine-tune-transfomers)
-2. [Trendyol Cybersecurity LLM Dataset](https://huggingface.co/Trendyol/Trendyol-Cybersecurity-LLM-Qwen3-32B-Q8_0-GGUF)
+2. [Trendyol Cybersecurity LLM Dataset](https://huggingface.co/datasets/Trendyol/Trendyol-Cybersecurity-Instruction-Tuning-Dataset)
 3. [PEFT Library Documentation](https://huggingface.co/docs/peft/index)
 4. [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685)
 5. [Hugging Face Transformers Documentation](https://huggingface.co/docs/transformers/index)
