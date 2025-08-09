@@ -54,6 +54,7 @@ Parameter-Efficient Fine-Tuning (PEFT) with LoRA allows us to adapt large langua
 ## Dataset: Trendyol Cybersecurity LLM
 
 For this fine-tuning exercise, we'll use the cybersecurity dataset from [Trendyol's Cybersecurity LLM](https://huggingface.co/Trendyol/Trendyol-Cybersecurity-LLM-Qwen3-32B-Q8_0-GGUF), which provides high-quality cybersecurity-focused training examples.
+**Note: Please make sure you read the permitted uses for this dataset**
 
 ## Implementation
 
@@ -330,6 +331,28 @@ fine_tuned_model = load_fine_tuned_model(
 # Now you can use fine_tuned_model for cybersecurity-specific tasks
 ```
 
+## Usage Examples
+# 1. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+# 2. Create sample config and dataset
+```bash
+python fine_tune_gpt_oss_cybersecurity.py --create-sample-config
+python fine_tune_gpt_oss_cybersecurity.py --create-sample-dataset sample_data.jsonl
+```
+
+# 3. Train the model
+```bash
+python fine_tune_gpt_oss_cybersecurity.py --config config.yaml --dataset sample_data.jsonl
+```
+
+# 4. Run inference
+```bash
+python fine_tune_gpt_oss_cybersecurity.py --inference ./gpt-oss-cybersecurity-lora --prompt "What is a DDoS attack?"
+```
+
 ## Benefits and Use Cases
 
 The fine-tuned cybersecurity model can be used for:
@@ -353,7 +376,9 @@ When deploying locally, consider:
 
 Fine-tuning OpenAI's GPT-OSS20B with PEFT/LoRA provides a powerful approach to creating specialized cybersecurity models that can run locally. This approach offers the benefits of domain specialization while maintaining data privacy and reducing operational costs.
 
-The combination of the robust base model, efficient fine-tuning techniques, and high-quality cybersecurity datasets creates a powerful tool for organizations looking to enhance their security capabilities with AI.
+The combination of the robust base model, efficient fine-tuning techniques, and high-quality cybersecurity datasets creates a powerful tool for organizations looking to enhance their security capabilities with AI. 
+
+The code provided in this post serves as a starting point for your own fine-tuning experiments. [See my repo at https://github.com/bird70/finetune-gpt-oss-cybersecurity] Feel free to adapt and extend it based on your specific needs and datasets.
 
 ## References
 
@@ -365,3 +390,6 @@ The combination of the robust base model, efficient fine-tuning techniques, and 
 ---
 
 **Note**: This implementation assumes access to appropriate computational resources and datasets. Adjust batch sizes, sequence lengths, and other parameters based on your available hardware and specific requirements.
+Please make sure to follow the permitted uses for the Trendyol dataset and any other datasets you use in your fine-tuning process.
+
+This example is for educational purposes and may require further adjustments based on your specific use case and environment.
