@@ -20,9 +20,9 @@ tags:
   - cloud
 toc: true
 toc-sticky: true
-header:
-  image: /assets/images/ArcGIS_Origin_Architecture.svg
-  teaser: /assets/images/ArcGIS_Origin_Architecture.svg
+# header:
+#   image: /assets/images/ArcGIS_Origin_Architecture.svg
+#   teaser: /assets/images/ArcGIS_Origin_Architecture.svg
 excerpt: "Choosing between different technologies for creating infrastructure-as-code (IaC) for AWS."
 ---
 
