@@ -378,7 +378,7 @@ Fine-tuning OpenAI's GPT-OSS20B with PEFT/LoRA provides a powerful approach to c
 
 The combination of the robust base model, efficient fine-tuning techniques, and high-quality cybersecurity datasets creates a powerful tool for organizations looking to enhance their security capabilities with AI. 
 
-The code provided in this post serves as a starting point for your own fine-tuning experiments. [See my repo at https://github.com/bird70/finetune-gpt-oss-cybersecurity] Feel free to adapt and extend it based on your specific needs and datasets.
+The code provided in this post serves as a starting point for your own fine-tuning experiments. [See my [code repo at](https://github.com/bird70/finetune-gpt-oss-cybersecurity)] Feel free to adapt and extend it based on your specific needs and datasets.
 
 ## References
 
