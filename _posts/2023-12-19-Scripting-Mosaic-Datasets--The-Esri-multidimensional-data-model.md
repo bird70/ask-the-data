@@ -17,8 +17,8 @@ tags:
   - powershell
   - raster
 header:
-  image: /assets/images/GUID-31E04AE1-F88D-41BF-A6B4-E7EB8E5A0853-web.png
-  teaser: /assets/images/GUID-31E04AE1-F88D-41BF-A6B4-E7EB8E5A0853-web.png
+  image: {{ "/assets/images/GUID-31E04AE1-F88D-41BF-A6B4-E7EB8E5A0853-web.png" | absolute_url }}
+  teaser: {{ "/assets/images/GUID-31E04AE1-F88D-41BF-A6B4-E7EB8E5A0853-web.png" | absolute_url }}
 excerpt: "Scripting the Esri Mosaic Dataset Creation using Esri's Mosaic Dataset Configuration Scripts (MDCS) in Powershell, for repeatable workflows with massive raster data collections."
 ---
 
