@@ -5,7 +5,7 @@ read_time: true
 comments: false
 share: true
 related: true
-title: Detecting Rooftop Solar from high-resolution aerial imagery — scalable Roboflow inferencing + spatial clustering (Auckland case study)
+title: Detecting Rooftop Solar from high-resolution aerial imagery — scalable Roboflow inferencing + spatial clustering - Auckland case study
 date: 2025-11-09
 categories:
   - spatial
