@@ -16,8 +16,8 @@ tags:
   - popups
   - webmap
 header:
-    image: {{ "/assets/images/ArcadeFormattedPopup.jpg" | absolute_url }}
-    teaser: {{ "/assets/images/ArcadeFormattedPopup.jpg" | absolute_url }}
+    image: /assets/images/ArcadeFormattedPopup.jpg
+    teaser: /assets/images/ArcadeFormattedPopup.jpg
 excerpt: "Using Esri's Arcade script language to populate fields in a web map popup, with conditional display of images and output from feature set query."
 ---
 

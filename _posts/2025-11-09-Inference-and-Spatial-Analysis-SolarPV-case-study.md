@@ -23,10 +23,10 @@ tags:
   - terraform
 toc: true
 toc-sticky: true
-excerpt: Using high-resolution aerial imagery to detect rooftop solar PV installations across Auckland, New Zealand. Combining Roboflow/YOLO detection with AWS Batch and Terraform for scalable inference, followed by spatial clustering analysis to identify adoption patterns. - Across New Zealand suburbs rooftop solar PV adoption is patchy and often unexplained by simple economic signals. Ever wondered: where are the gaps - and is there a way to explain their location? This project turns publicly available high‑resolution aerial imagery (LINZ 7.5 cm) into an actionable dataset of rooftop solar locations, then uses spatial statistics to reveal clusters and gaps that local government and industry can target.
 header:
   image: /assets/images/detection_overview.jpeg
   teaser: /assets/images/detection_overview.jpeg
+excerpt: Using high-resolution aerial imagery to detect rooftop solar PV installations across Auckland, New Zealand. Combining Roboflow/YOLO detection with AWS Batch and Terraform for scalable inference, followed by spatial clustering analysis to identify adoption patterns. - Across New Zealand suburbs rooftop solar PV adoption is patchy and often unexplained by simple economic signals. Ever wondered: where are the gaps - and is there a way to explain their location? This project turns publicly available high‑resolution aerial imagery (LINZ 7.5 cm) into an actionable dataset of rooftop solar locations, then uses spatial statistics to reveal clusters and gaps that local government and industry can target.
 ---
 
 
