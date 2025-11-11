@@ -1,5 +1,33 @@
+---
+layout: single
+author_profile: true
+read_time: true
+comments: false
+share: true
+related: true
+title: Detecting Rooftop Solar from high-resolution aerial imagery — scalable Roboflow inferencing + spatial clustering (Auckland case study)
+date: 2025-11-09
+categories:
+  - spatial
+  - analysis
+  - python
+  - cloud
+tags:
+  - inference
+  - roboflow
+  - point-pattern
+  - h3
+  - optics
+  - heterogeneity
+  - aws
+  - terraform
+toc: true
+toc-sticky: true
+
+---
+
 # Detecting Rooftop Solar from high-resolution aerial imagery — scalable Roboflow inferencing + spatial clustering (Auckland case study)
-_Author: [ts](https://bird70.github.io) | Date: November 9, 2025_
+
 
 Across New Zealand suburbs rooftop solar PV adoption is patchy and often unexplained by simple economic signals. Ever wondered: where are the gaps - and is there a way to explain their location? 
 This project turns publicly available high‑resolution aerial imagery (LINZ 7.5 cm) into an actionable dataset of rooftop solar locations, then uses spatial statistics to reveal clusters and gaps that local government and industry can target. The implementation combines a Roboflow/YOLO detector with an AWS Batch pipeline deployed via Terraform, produces georeferenced detections (GeoJSON), and supplies scripts for tiling, uploading, inference, and postprocessing.
