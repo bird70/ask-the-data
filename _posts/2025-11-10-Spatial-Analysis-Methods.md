@@ -20,18 +20,22 @@ tags:
   - heterogeneity
 toc: true
 toc-sticky: true
-# header:
-#   image: /assets/images/ArcGIS_Origin_Architecture.svg
-#   teaser: /assets/images/ArcGIS_Origin_Architecture.svg
+header:
+  image: /assets/images/DarkViridisH3L8.jpeg
+  teaser: /assets/images/DarkViridisH3L8.jpeg
 excerpt: "Choosing between different analysis methods for spatial point patterns. Overview of clustering, dispersion, and heterogeneity methods with practical guidance."
+header:
+  teaser: /assets/images/spatial_analysis_decision_tree.svg
 ---
-# Spatial Analysis Methods — Distinguish, Decide, and Apply
+<!-- ![alt text](../assets/images/DarkViridisH3L8.jpeg) -->
 
 Spatial analysis covers many methods for understanding how things are arranged in space. While they may look related, the methods answer different questions and therefore require different data preparation, parameter tuning, and interpretation. This post explains the main families of methods, gives practical guidance, and lists alternatives and complementary approaches.
 
 ## Why distinguish methods?
 
 Different spatial questions call for different tools. Conflating them leads to wrong inferences: a clustering algorithm that finds groups is not a test of randomness; a global autocorrelation statistic is not a map of local hotspots. Make the question explicit first (e.g., "are there discrete groups?" vs "is density heterogeneous?") and choose tools that map to that question.
+
+![alt text](/assets/images/spatial_analysis_decision_tree.svg)
 
 ## A short taxonomy
 
@@ -54,6 +58,8 @@ Common algorithms
 When to use
 - Use density-based methods (DBSCAN/HDBSCAN/OPTICS) when clusters are irregularly shaped and you don't want to pre-specify cluster counts.
 - Use K-Means for compact, convex clusters where the number of clusters is known or can be estimated.
+
+![OPTICS clustering Auckland overlaid on hexbins](/assets/images/OPTICS_clustering_H3_overlay.jpeg)
 
 Alternatives and complements
 - For hierarchical structure: agglomerative clustering on distance matrices.
@@ -90,11 +96,15 @@ Practical tips
 
 Purpose: describe how intensity (counts per area) changes across space and identify hotspots or heterogeneity.
 
+![H3 hexbins](/assets/images/H3_L9.jpeg)
+
 Common approaches
 - Kernel Density Estimation (KDE) — continuous surface estimate of intensity. Bandwidth selection is crucial.
 - Hexagonal binning (H3, regular hex grids) — aggregate counts into cells and compute heterogeneity metrics (variance, Gini, entropy).
 - Local indicators of spatial association (LISA) and Getis-Ord Gi* — identify local hotspots and coldspots.
 - Spatial regression (GWR) — model spatially varying relationships when covariates exist.
+
+![Kernel Density KDE](/assets/images/KernelDensity.jpeg)
 
 When to use
 - Use KDE to produce smooth intensity surfaces when point locations are dense and you care about continuous variation.
