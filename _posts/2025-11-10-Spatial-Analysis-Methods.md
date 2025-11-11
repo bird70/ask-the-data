@@ -21,8 +21,8 @@ tags:
 toc: true
 toc-sticky: true
 header:
-  image: {{ "/assets/images/spatial_analysis_decision_tree.svg" | absolute_url }}
-  teaser: {{ "/assets/images/spatial_analysis_decision_tree.svg" | absolute_url }}
+  image: /assets/images/spatial_analysis_decision_tree.svg 
+  teaser: /assets/images/spatial_analysis_decision_tree.svg
 excerpt: "Choosing between different analysis methods for spatial point patterns. Overview of clustering, dispersion, and heterogeneity methods with practical guidance."
 ---
 <!-- ![alt text](../assets/images/DarkViridisH3L8.jpeg) -->
