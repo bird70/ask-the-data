@@ -1,5 +1,5 @@
 # Detecting Rooftop Solar from high-resolution aerial imagery — scalable Roboflow inferencing + spatial clustering (Auckland case study)
-_Author: [ts](https://bird70.github.io) | Date: August 9, 2025_
+_Author: [ts](https://bird70.github.io) | Date: November 9, 2025_
 
 Across New Zealand suburbs rooftop solar PV adoption is patchy and often unexplained by simple economic signals. Ever wondered: where are the gaps - and is there a way to explain their location? 
 This project turns publicly available high‑resolution aerial imagery (LINZ 7.5 cm) into an actionable dataset of rooftop solar locations, then uses spatial statistics to reveal clusters and gaps that local government and industry can target. The implementation combines a Roboflow/YOLO detector with an AWS Batch pipeline deployed via Terraform, produces georeferenced detections (GeoJSON), and supplies scripts for tiling, uploading, inference, and postprocessing.
@@ -24,7 +24,7 @@ This project turns publicly available high‑resolution aerial imagery (LINZ 7.5
 5. Postprocess & store: write GeoJSON to S3; optionally push detections into PostGIS for joins with building footprints and census data.  
 6. Spatial analytics: produce density maps, clusters (DBSCAN/HDBSCAN), spatial autocorrelation (Moran’s I), and area scores identifying gaps and clusters.
 
-## Repository highlights (what’s included in https://github.com/bird70/solar-pv-inferencing)
+## [Repository highlights - what’s included in solar-pv-inferencing ](https://github.com/bird70/solar-pv-inferencing)
 - tile_and_upload_to_s3.py — rasterio-based tiler + uploader (tile size, overlap configurable).  
 - s3_yolo_infer.py — example inference runner: streams tiles from S3, calls Roboflow workflow or local model, converts detections to georeferenced GeoJSON, optionally uploads to PostGIS.  
 - infra/ (Terraform) — batch.tf, s3.tf, iam.tf, cloudwatch.tf, variables.tf plus scripts/infer_pv_s3.py (inference entrypoint).  
@@ -34,7 +34,7 @@ This project turns publicly available high‑resolution aerial imagery (LINZ 7.5
 
 ## Key technical details and rationale
 Tiling and georeferencing
-- Default tiling (1024 px with 25% overlap) protects against missed detections at tile edges; overlap is adjustable.  
+- Default tiling (1024 px or 2048 px with 25% overlap) protects against missed detections at tile edges; overlap is adjustable.  
 - Tile metadata records rasterio transform and CRS so detector pixel coordinates can be reliably converted to world coordinates (pixel_to_world, bbox_pixels_to_world helpers).
 
 ## Detection modes
