@@ -19,8 +19,8 @@ tags:
 toc: true
 toc-sticky: true
 header:
-  image: {{ "/assets/images/ArcGIS_Origin_Architecture.svg" | absolute_url }}
-  teaser: {{ "/assets/images/ArcGIS_Origin_Architecture.svg" | absolute_url }}
+  image: /assets/images/ArcGIS_Origin_Architecture.svg
+  teaser: /assets/images/ArcGIS_Origin_Architecture.svg
 excerpt: "Exploring architectural choices and tradeoffs when migrating ArcGIS data workflows from on-premises to cloud-native solutions, including AWS and ArcGIS Online."
 ---
 
