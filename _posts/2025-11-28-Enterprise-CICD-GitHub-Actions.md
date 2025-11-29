@@ -759,8 +759,8 @@ deploy:
     - name: Deploy to ${{ matrix.environment }}
       run: |
         aws ecs update-service \
-          --cluster ${{ secrets[format('ECS_CLUSTER_{0}', matrix.environment)] }} \
-          --service ${{ secrets[format('ECS_SERVICE_{0}', matrix.environment)] }}
+          --cluster ${{ secrets[format('ECS_CLUSTER_0', matrix.environment)] }} \
+          --service ${{ secrets[format('ECS_SERVICE_0', matrix.environment)] }}
 ```
 
 ### Approval Gates for Production
