@@ -33,6 +33,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install mermaid-cli
+        run: npm install -g @mermaid-js/mermaid-cli
+
+      - name: Extract Mermaid blocks to .mmd
+        run: |
+          node scripts/extract_mermaid.js
+
+      - name: Render Mermaid .mmd files to SVG
+        run: |
+          mkdir -p assets/diagrams/svg
+          for f in $(find assets/diagrams -name '*.mmd' 2>/dev/null); do
+            out="assets/diagrams/svg/$(basename "${f%.*}").svg"
+            mmdc -i "$f" -o "$out" || echo "Failed to render $f"
+          done
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:

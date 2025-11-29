@@ -86,6 +86,12 @@ graph TD
     style F fill:#e1f5f5
 ```
 
+![diagram]({{ '/assets/diagrams/svg/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_2.svg' | relative_url }})
+
+![diagram]({{ '/assets/diagrams/svg/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_1.svg' | relative_url }})
+
+  ![diagram]({{ '/assets/diagrams/svg/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_0.svg' | relative_url }})
+
 Each job has a specific responsibility and only runs if its dependencies succeed. This ensures we never deploy broken code or skip critical security checks.
 
 ## Job 1: Testing — The Foundation
@@ -822,4 +828,4 @@ Whether you're deploying to ECS, Kubernetes, Lambda, or any other platform, thes
 - [Checkov Security Scanning](https://www.checkov.io/)
 - [Terraform-docs](https://terraform-docs.io/)
 - [Infracost](https://www.infracost.io/)
-- [Example Repository](https://github.com/yourusername/your-repo) - Full working implementation
+- [Example Repository](https://github.com/bird70/scientific_raster_data_sharing) - Full working implementation
