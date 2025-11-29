@@ -85,13 +85,7 @@ graph TD
     style E fill:#f5f0e1
     style F fill:#e1f5f5
 ```
-As diagram:
-
-![diagram]({{ '/assets/diagrams/svg/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_2.svg' | relative_url }})
-
-![diagram]({{ '/assets/diagrams/svg/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_1.svg' | relative_url }})
-
-  ![diagram]({{ '/assets/diagrams/svg/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_0.svg' | relative_url }})
+As diagram
 
 Each job has a specific responsibility and only runs if its dependencies succeed. This ensures we never deploy broken code or skip critical security checks.
 
