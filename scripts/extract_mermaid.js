@@ -27,7 +27,8 @@ function ensureDir(dir) {
 
 const root = process.cwd();
 const files = walk(root).filter(f => f.endsWith('.md') || f.endsWith('.markdown'));
-const outDir = path.join(root, 'assets', 'diagrams');
+// Write intermediate .mmd files into assets/images/diagrams/mmd
+const outDir = path.join(root, 'assets', 'images', 'diagrams', 'mmd');
 ensureDir(outDir);
 
 for (const file of files) {
@@ -51,8 +52,8 @@ for (const file of files) {
 
       const svgName = base + '.svg';
       // Insert an HTML <img> that first tries absolute_url and falls back to relative_url on error
-      const absUrl = `{{ "/assets/diagrams/svg/${svgName}" | absolute_url }}`;
-      const relUrl = `{{ "/assets/diagrams/svg/${svgName}" | relative_url }}`;
+      const absUrl = `{{ "/assets/images/diagrams/${svgName}" | absolute_url }}`;
+      const relUrl = `{{ "/assets/images/diagrams/${svgName}" | relative_url }}`;
       const imageLine = `<img src="${absUrl}" alt="diagram" onerror="this.onerror=null;this.src='${relUrl}'" />`;
 
       const matchEnd = m.index + m[0].length;
