@@ -38,19 +38,22 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install mermaid-cli
-        run: npm install -g @mermaid-js/mermaid-cli
+      - name: Install system deps for headless Chromium
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxss1 \
+            libxcomposite1 libxrandr2 libgbm1 libasound2 libpangocairo-1.0-0 fonts-liberation
 
       - name: Extract Mermaid blocks to .mmd
         run: |
           node scripts/extract_mermaid.js
 
-      - name: Render Mermaid .mmd files to SVG
+      - name: Render Mermaid .mmd files to SVG (with no-sandbox)
         run: |
           mkdir -p assets/diagrams/svg
           for f in $(find assets/diagrams -name '*.mmd' 2>/dev/null); do
             out="assets/diagrams/svg/$(basename "${f%.*}").svg"
-            mmdc -i "$f" -o "$out" || echo "Failed to render $f"
+            npx --yes @mermaid-js/mermaid-cli -i "$f" -o "$out" --puppeteerConfigFile scripts/puppeteer-config.json || echo "Failed to render $f"
           done
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
