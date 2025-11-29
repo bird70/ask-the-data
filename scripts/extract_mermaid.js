@@ -60,7 +60,7 @@ for (const file of files) {
       newContent += content.slice(lastIndex, matchEnd);
 
       const lookahead = content.slice(matchEnd, matchEnd + 400);
-      const alreadyHasImage = lookahead.includes(svgName) || /!\[.*\]\(.+assets\/diagrams\/svg\/.+\)/.test(lookahead);
+      const alreadyHasImage = lookahead.includes(svgName) || /!\[.*\]\(.+assets\/images\/diagrams\/.+\)/.test(lookahead);
 
       if (!alreadyHasImage) {
         newContent += '\n\n' + imageLine + '\n';
@@ -83,5 +83,5 @@ for (const file of files) {
   }
 }
 
-// Also leave any existing .mmd files alone; the workflow will render everything in assets/diagrams
+// Also leave any existing .mmd files alone; the workflow will render everything in assets/images/diagrams
 console.log('Extraction complete.');

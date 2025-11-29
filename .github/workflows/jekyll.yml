@@ -51,10 +51,10 @@ jobs:
 
       - name: Render Mermaid .mmd files to SVG (with no-sandbox)
         run: |
-          mkdir -p assets/diagrams/svg
+          mkdir -p assets/images/diagrams
           set -x
-          for f in $(find assets/diagrams -name '*.mmd' 2>/dev/null); do
-            out="assets/diagrams/svg/$(basename "${f%.*}").svg"
+          for f in $(find assets/images/diagrams/mmd -name '*.mmd' 2>/dev/null); do
+            out="assets/images/diagrams/$(basename "${f%.*}").svg"
             echo "Rendering $f -> $out"
             npx --yes @mermaid-js/mermaid-cli -i "$f" -o "$out" --puppeteerConfigFile scripts/puppeteer-config.json || true
             if [ -f "$out" ]; then
@@ -77,7 +77,7 @@ jobs:
           git status --porcelain
           git config --local user.email "$GIT_COMMITTER_EMAIL"
           git config --local user.name "$GIT_COMMITTER_NAME"
-          git add assets/diagrams/svg || true
+          git add assets/images/diagrams || true
           if git diff --staged --quiet; then
             echo "No diagram changes to commit"
           else
