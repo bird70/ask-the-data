@@ -16,7 +16,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -68,6 +68,23 @@ jobs:
             fi
           done
           set +x
+      - name: Commit generated diagram SVGs
+        env:
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          echo "Checking for generated SVGs to commit..."
+          git status --porcelain
+          git config --local user.email "$GIT_COMMITTER_EMAIL"
+          git config --local user.name "$GIT_COMMITTER_NAME"
+          git add assets/diagrams/svg || true
+          if git diff --staged --quiet; then
+            echo "No diagram changes to commit"
+          else
+            git commit -m "chore: add generated mermaid SVGs [skip ci]" || true
+            # Push back to the gh-pages branch
+            git push origin HEAD:gh-pages || echo "Push failed"
+          fi
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -79,6 +96,18 @@ jobs:
         run: bundle exec jekyll build --baseurl "/ask-the-data"
         env:
           JEKYLL_ENV: production
+      - name: Debug: list generated diagram SVGs in _site
+        run: |
+          echo "Looking for rendered SVGs in _site..."
+          if [ -d "_site/assets/diagrams/svg" ]; then
+            echo "_site/assets/diagrams/svg exists - listing contents:";
+            ls -la _site/assets/diagrams/svg || true
+            echo "Found SVGs under _site:";
+            find _site -type f -name "*.svg" -print || true
+          else
+            echo "No _site/assets/diagrams/svg directory found";
+            echo "List top-level _site dirs:"; ls -la _site || true
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         
