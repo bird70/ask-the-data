@@ -50,7 +50,10 @@ for (const file of files) {
       console.log('WROTE', outMmd);
 
       const svgName = base + '.svg';
-      const imageLine = `![diagram]({{ '/assets/diagrams/svg/${svgName}' | absolute_url }})`;
+      // Insert an HTML <img> that first tries absolute_url and falls back to relative_url on error
+      const absUrl = `{{ "/assets/diagrams/svg/${svgName}" | absolute_url }}`;
+      const relUrl = `{{ "/assets/diagrams/svg/${svgName}" | relative_url }}`;
+      const imageLine = `<img src="${absUrl}" alt="diagram" onerror="this.onerror=null;this.src='${relUrl}'" />`;
 
       const matchEnd = m.index + m[0].length;
       newContent += content.slice(lastIndex, matchEnd);

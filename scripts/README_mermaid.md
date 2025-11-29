@@ -48,8 +48,8 @@ Contact
 Automatic insertion
 - The extractor now automatically inserts an image reference after each `mermaid` block when it generates the corresponding `.mmd` file. The inserted image looks like:
 
-  ```markdown
-  ![diagram]({{ "/assets/diagrams/svg/yourfile.svg" | absolute_url }})
+  ```html
+  <img src="{{ "/assets/diagrams/svg/yourfile.svg" | absolute_url }}" alt="diagram" onerror="this.onerror=null;this.src='{{ '/assets/diagrams/svg/yourfile.svg' | relative_url }}'" />
   ```
 
   The script avoids duplicate insertions by checking for an existing reference to the same SVG within the next ~400 characters.
