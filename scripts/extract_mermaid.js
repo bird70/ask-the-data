@@ -50,7 +50,8 @@ for (const file of files) {
       console.log('WROTE', outMmd);
 
       const svgName = base + '.svg';
-      const imageLine = `![diagram]({{ '/assets/diagrams/svg/${svgName}' | relative_url }})`;
+      // Insert absolute_url to match existing posts' asset linking
+      const imageLine = `![diagram]({{ "/assets/diagrams/svg/${svgName}" | absolute_url }})`;
 
       const matchEnd = m.index + m[0].length;
       newContent += content.slice(lastIndex, matchEnd);

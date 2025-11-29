@@ -25,12 +25,12 @@ Including diagrams in posts
     A-->B
   ```
 
-  ![diagram]({{ '/assets/diagrams/svg/yourfile.svg' | relative_url }})
+  ![diagram]({{ "/assets/diagrams/svg/yourfile.svg" | absolute_url }})
   ```
 
 - Notes:
   - The extractor will name generated files using a sanitized version of the markdown file path plus an index, e.g. `_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_0.svg` for the first mermaid block in `_posts/2025-11-28-Enterprise-CICD-GitHub-Actions.md`.
-  - Use the `relative_url` filter so Jekyll inserts `site.baseurl` correctly: `{{ '/assets/diagrams/svg/name.svg' | relative_url }}`.
+  - Use the `absolute_url` filter so the inserted image uses the full canonical URL: `{{ '/assets/diagrams/svg/name.svg' | absolute_url }}`. Ensure `site.url` and `site.baseurl` are configured in `_config.yml` so `absolute_url` resolves correctly.
   - You can keep the mermaid source block in the post for readers; the image is the rendered version displayed to readers.
 
 Committing rendered SVGs (optional)
@@ -49,7 +49,7 @@ Automatic insertion
 - The extractor now automatically inserts an image reference after each `mermaid` block when it generates the corresponding `.mmd` file. The inserted image looks like:
 
   ```markdown
-  ![diagram]({{ '/assets/diagrams/svg/yourfile.svg' | relative_url }})
+  ![diagram]({{ "/assets/diagrams/svg/yourfile.svg" | absolute_url }})
   ```
 
   The script avoids duplicate insertions by checking for an existing reference to the same SVG within the next ~400 characters.
