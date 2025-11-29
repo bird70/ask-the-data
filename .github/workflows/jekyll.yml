@@ -100,13 +100,11 @@ jobs:
         run: |
           echo "Looking for rendered SVGs in _site..."
           if [ -d "_site/assets/diagrams/svg" ]; then
-            echo "_site/assets/diagrams/svg exists - listing contents:";
             ls -la _site/assets/diagrams/svg || true
-            echo "Found SVGs under _site:";
             find _site -type f -name "*.svg" -print || true
           else
-            echo "No _site/assets/diagrams/svg directory found";
-            echo "List top-level _site dirs:"; ls -la _site || true
+            echo "No _site/assets/diagrams/svg directory found"
+            ls -la _site || true
           fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
