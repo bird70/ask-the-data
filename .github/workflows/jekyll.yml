@@ -98,12 +98,10 @@ jobs:
           JEKYLL_ENV: production
       - name: Debug: list generated diagram SVGs in _site
         run: |
-          echo "Looking for rendered SVGs in _site..."
           if [ -d "_site/assets/diagrams/svg" ]; then
             ls -la _site/assets/diagrams/svg || true
             find _site -type f -name "*.svg" -print || true
           else
-            echo "No _site/assets/diagrams/svg directory found"
             ls -la _site || true
           fi
       - name: Upload artifact
