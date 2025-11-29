@@ -85,6 +85,7 @@ graph TD
     style E fill:#f5f0e1
     style F fill:#e1f5f5
 ```
+As diagram:
 
 ![diagram]({{ '/assets/diagrams/svg/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_2.svg' | relative_url }})
 
