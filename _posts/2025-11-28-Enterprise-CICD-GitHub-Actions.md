@@ -87,6 +87,7 @@ graph TD
 ```
 As diagram
 
+![GitHub Actions CI CD pipeline flowchart showing five primary jobs and their substeps. Primary subjects are Test Job, Build Job, Terraform Docs and Security Job, Deploy Job, and Smoke Tests Job. Arrows show sequence: Push to main leads to Test Job, which leads to Build Job and Terraform Docs and Security job in parallel, both feeding into Deploy Job, followed by Smoke Tests. Substeps transcribed include Run pytest, Unit Tests, Generate Coverage Report, Upload Codecov, Build Docker Image, Push to Amazon ECR, Generate Docs for Each Module, Run Checkov Scan, Check for Critical Issues, Commit Documentation, Push Changes, Download Task Definitions, Update New Image Tag, Register New Task Definition, Deploy to ECS Services, Wait for Stabilization, Test Health Endpoint, Tiles API, Timeseries API, Metrics. The diagram uses color coded boxes for each major job and arrows for dependencies; overall tone is technical and instructional.]({{ "/assets/diagrams/svg/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_0.svg" | absolute_url }}))
 Each job has a specific responsibility and only runs if its dependencies succeed. This ensures we never deploy broken code or skip critical security checks.
 
 ## Job 1: Testing — The Foundation
