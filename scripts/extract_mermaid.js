@@ -33,17 +33,46 @@ ensureDir(outDir);
 for (const file of files) {
   try {
     const rel = path.relative(root, file);
-    const content = fs.readFileSync(file, 'utf8');
+    let content = fs.readFileSync(file, 'utf8');
     const re = /```mermaid\n([\s\S]*?)```/g;
     let m;
     let localIndex = 0;
+    let newContent = '';
+    let lastIndex = 0;
+
     while ((m = re.exec(content)) !== null) {
       const body = m[1];
       if (!body.trim()) continue;
+
       const base = sanitize(rel) + '_' + (localIndex++);
-      const outPath = path.join(outDir, base + '.mmd');
-      fs.writeFileSync(outPath, body, 'utf8');
-      console.log('WROTE', outPath);
+      const outMmd = path.join(outDir, base + '.mmd');
+      fs.writeFileSync(outMmd, body, 'utf8');
+      console.log('WROTE', outMmd);
+
+      const svgName = base + '.svg';
+      const imageLine = `![diagram]({{ '/assets/diagrams/svg/${svgName}' | relative_url }})`;
+
+      const matchEnd = m.index + m[0].length;
+      newContent += content.slice(lastIndex, matchEnd);
+
+      const lookahead = content.slice(matchEnd, matchEnd + 400);
+      const alreadyHasImage = lookahead.includes(svgName) || /!\[.*\]\(.+assets\/diagrams\/svg\/.+\)/.test(lookahead);
+
+      if (!alreadyHasImage) {
+        newContent += '\n\n' + imageLine + '\n';
+        console.log('INSERTED image ref for', file, svgName);
+      } else {
+        console.log('Image ref already present for', file, svgName);
+      }
+
+      lastIndex = matchEnd;
+    }
+
+    newContent += content.slice(lastIndex);
+
+    if (newContent && newContent !== content) {
+      fs.writeFileSync(file, newContent, 'utf8');
+      console.log('UPDATED', file);
     }
   } catch (err) {
     console.error('ERR', file, err.message);

@@ -44,3 +44,14 @@ Troubleshooting
 
 Contact
 - If you'd like automatic insertion of image references after mermaid blocks, I can update the extractor to modify markdown files in CI or edit specific posts in the repo.
+
+Automatic insertion
+- The extractor now automatically inserts an image reference after each `mermaid` block when it generates the corresponding `.mmd` file. The inserted image looks like:
+
+  ```markdown
+  ![diagram]({{ '/assets/diagrams/svg/yourfile.svg' | relative_url }})
+  ```
+
+  The script avoids duplicate insertions by checking for an existing reference to the same SVG within the next ~400 characters.
+
+  If you prefer a different inserted format (alt text or HTML wrapper), let me know and I can change the behavior.
