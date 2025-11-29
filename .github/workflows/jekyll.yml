@@ -36,7 +36,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Install system deps for headless Chromium
         run: |
@@ -52,10 +52,22 @@ jobs:
       - name: Render Mermaid .mmd files to SVG (with no-sandbox)
         run: |
           mkdir -p assets/diagrams/svg
+          set -x
           for f in $(find assets/diagrams -name '*.mmd' 2>/dev/null); do
             out="assets/diagrams/svg/$(basename "${f%.*}").svg"
-            npx --yes @mermaid-js/mermaid-cli -i "$f" -o "$out" --puppeteerConfigFile scripts/puppeteer-config.json || echo "Failed to render $f"
+            echo "Rendering $f -> $out"
+            npx --yes @mermaid-js/mermaid-cli -i "$f" -o "$out" --puppeteerConfigFile scripts/puppeteer-config.json || true
+            if [ -f "$out" ]; then
+              echo "RENDERED $out"
+            else
+              echo "FAILED to render $f"
+              # dump the .mmd to help debugging
+              echo "--- contents of $f ---"
+              sed -n '1,200p' "$f" || true
+              echo "--- end $f ---"
+            fi
           done
+          set +x
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
