@@ -81,6 +81,84 @@ The platform is built on AWS using a serverless and container-based architecture
 
 ### Ingestion Pipeline
 
+#### High-Level Architecture
+
+```
+┌─────────────┐
+│   Users     │
+└──────┬──────┘
+       │
+       ▼
+┌─────────────────┐
+│  CloudFront CDN │ (Tile caching, HTTPS)
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│      ALB        │ (HTTPS listener, path routing)
+└────────┬────────┘
+         │
+    ┌────┴────┐
+    │         │
+    ▼         ▼
+┌────────┐ ┌──────────┐
+│ Tiles  │ │Timeseries│ (ECS Fargate services)
+│Service │ │ Service  │
+└───┬────┘ └────┬─────┘
+    │           │
+    │           ▼
+    │      ┌─────────┐
+    │      │  Dask   │ (Scheduler + Workers)
+    │      │ Cluster │
+    │      └────┬────┘
+    │           │
+    └───────┬───┴──────┐
+            │          │
+            ▼          ▼
+       ┌────────┐  ┌──────────┐
+       │   S3   │  │OpenSearch│
+       │ Zarr/  │  │  (STAC)  │
+       │  COG   │  └──────────┘
+       └────────┘
+            ▲
+            │
+    ┌───────┴────────┐
+    │   Ingestion    │
+    │    Pipeline    │
+    │ (Lambda + Step │
+    │   Functions)   │
+    └───────▲────────┘
+            │
+       ┌────┴────┐
+       │   S3    │
+       │  Raw    │
+       │ NetCDF  │
+       └─────────┘
+```
+
+### Component Interaction Flow
+
+**Tile Request Flow:**
+1. User requests tile → CloudFront (cache check)
+2. Cache miss → ALB → Tiles ECS Service
+3. Service queries OpenSearch for COG location
+4. Service reads COG from S3, renders tile
+5. Response cached at CloudFront edge
+
+**Timeseries Request Flow:**
+1. User requests timeseries → CloudFront (no cache) → ALB → Timeseries ECS Service
+2. Service queries OpenSearch for overlapping datasets
+3. Service submits Dask tasks to read Zarr from S3
+4. Dask workers process in parallel, aggregate results
+5. Service caches result in Redis, returns to user
+
+**Ingestion Flow:**
+1. NetCDF uploaded to S3 raw bucket
+2. S3 event triggers Lambda
+3. Lambda starts Step Functions workflow
+4. Workflow orchestrates: NetCDF→Zarr conversion, COG generation, STAC item creation
+5. STAC item indexed in OpenSearch
+
 When a NetCDF file lands in S3:
 
 1. **S3 Event Trigger** → Lambda function validates the file
