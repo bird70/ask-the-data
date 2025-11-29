@@ -1,0 +1,25 @@
+sequenceDiagram
+    participant GHA as GitHub Actions
+    participant ECR as Amazon ECR
+    participant ECS as ECS Service
+    participant ALB as Load Balancer
+    participant Old as Old Tasks
+    participant New as New Tasks
+    
+    GHA->>ECS: Download current task definition
+    GHA->>GHA: Update image tag to new SHA
+    GHA->>ECS: Register new task definition
+    GHA->>ECS: Update service (force new deployment)
+    
+    ECS->>New: Start new tasks
+    New->>ALB: Register with target group
+    ALB->>New: Health check (grace period 60s)
+    New-->>ALB: Healthy
+    
+    ECS->>Old: Begin draining connections
+    ALB->>Old: Stop sending new requests
+    Old->>Old: Complete in-flight requests
+    ECS->>Old: Terminate old tasks
+    
+    GHA->>ECS: Wait for services-stable
+    ECS-->>GHA: Deployment complete
