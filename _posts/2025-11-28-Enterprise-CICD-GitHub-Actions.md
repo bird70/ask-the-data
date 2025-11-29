@@ -87,7 +87,7 @@ graph TD
 ```
 As diagram
 
-<img src="{{ "/assets/diagrams/svg/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_0.svg" | absolute_url }}" alt="GitHub Actions CI CD pipeline flowchart" onerror="this.onerror=null;this.src='{{ '/assets/diagrams/svg/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_0.svg' | relative_url }}'" />
+<img src="{{ "/assets/images/diagrams/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_0.svg" | absolute_url }}" alt="GitHub Actions CI CD pipeline flowchart" onerror="this.onerror=null;this.src='{{ '/assets/images/diagrams/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_0.svg' | relative_url }}'" />
 Each job has a specific responsibility and only runs if its dependencies succeed. This ensures we never deploy broken code or skip critical security checks.
 
 ## Job 1: Testing — The Foundation
