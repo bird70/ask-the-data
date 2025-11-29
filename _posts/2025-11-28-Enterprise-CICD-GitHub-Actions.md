@@ -228,6 +228,8 @@ graph LR
 ```
 
 ### Terraform Documentation Generation
+ 
+<img src="https://raw.githubusercontent.com/bird70/ask-the-data/gh-pages/assets/images/diagrams/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_1.svg" alt="diagram" onerror="this.onerror=null;this.src='{{ '/assets/images/diagrams/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_1.svg' | absolute_url }}'" />
 
 ```yaml
 - name: Install terraform-docs
@@ -354,6 +356,8 @@ sequenceDiagram
 ```
 
 ### The Deployment Process
+ 
+<img src="https://raw.githubusercontent.com/bird70/ask-the-data/gh-pages/assets/images/diagrams/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_2.svg" alt="diagram" onerror="this.onerror=null;this.src='{{ '/assets/images/diagrams/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_2.svg' | absolute_url }}'" />
 
 ```yaml
 - name: Download tiles service task definition
