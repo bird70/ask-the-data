@@ -21,8 +21,8 @@ tags:
 toc: true
 toc_sticky: true
 header:
-  image: /assets/images/Enterprise-CICD-GitHub-Actions_md_0.svg 
-  teaser: /assets/images/Enterprise-CICD-GitHub-Actions_md_0.svg
+  image: /assets/images/github_actions_pipeline.svg 
+  teaser: /assets/images/github_actions_pipeline.svg
 excerpt: "A practical guide to building production-ready CI/CD pipelines with GitHub Actions. Learn how to automate testing, building, security scanning, documentation, and deployment to AWS ECS with zero-downtime releases."
 ---
 
