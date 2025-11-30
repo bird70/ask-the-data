@@ -41,7 +41,7 @@ The challenges are clear:
 
 Traditional approaches—FTP servers, direct file downloads—don't scale for modern web applications or interactive analysis. Users need APIs that return exactly what they need: a map tile, a timeseries chart, a spatial subset.
 
-#### High-Level Architecture
+
 
 ```
 ┌─────────────┐
@@ -95,6 +95,7 @@ Traditional approaches—FTP servers, direct file downloads—don't scale for mo
        │ NetCDF  │
        └─────────┘
 ```
+**High-Level Architecture Flow**
 
 ## The Solution: A Multi-Format, API-First Platform
 
