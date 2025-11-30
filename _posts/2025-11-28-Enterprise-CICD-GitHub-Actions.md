@@ -21,8 +21,8 @@ tags:
 toc: true
 toc_sticky: true
 header:
-  image: /assets/images/github_actions_pipeline.svg 
-  teaser: /assets/images/github_actions_pipeline.svg
+  image: /assets/images/Enterprise-CICD-GitHub-Actions_md_0.svg 
+  teaser: /assets/images/Enterprise-CICD-GitHub-Actions_md_0.svg
 excerpt: "A practical guide to building production-ready CI/CD pipelines with GitHub Actions. Learn how to automate testing, building, security scanning, documentation, and deployment to AWS ECS with zero-downtime releases."
 ---
 
@@ -87,7 +87,7 @@ graph TD
 ```
 As diagram
 
-<img src="https://raw.githubusercontent.com/bird70/ask-the-data/gh-pages/assets/images/diagrams/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_0.svg" alt="GitHub Actions CI CD pipeline flowchart" onerror="this.onerror=null;this.src='{{ "/assets/images/diagrams/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_0.svg" | absolute_url }}'" />
+<img src="https://raw.githubusercontent.com/bird70/ask-the-data/gh-pages/assets/images/diagrams/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_0.svg" alt="GitHub Actions CI CD pipeline flowchart" onerror="this.onerror=null;this.src='{{ "/assets/images/Enterprise-CICD-GitHub-Actions_md_0.svg" | absolute_url }}'" />
 Each job has a specific responsibility and only runs if its dependencies succeed. This ensures we never deploy broken code or skip critical security checks.
 
 ## Job 1: Testing — The Foundation
@@ -229,7 +229,7 @@ graph LR
 
 ### Terraform Documentation Generation
  
-<img src="https://raw.githubusercontent.com/bird70/ask-the-data/gh-pages/assets/images/diagrams/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_1.svg" alt="diagram" onerror="this.onerror=null;this.src='{{ '/assets/images/diagrams/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_1.svg' | absolute_url }}'" />
+<img src="https://raw.githubusercontent.com/bird70/ask-the-data/gh-pages/assets/images/diagrams/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_1.svg" alt="diagram" onerror="this.onerror=null;this.src='{{ '/assets/images/Enterprise-CICD-GitHub-Actions_md_1.svg' | absolute_url }}'" />
 
 ```yaml
 - name: Install terraform-docs
@@ -357,7 +357,7 @@ sequenceDiagram
 
 ### The Deployment Process
  
-<img src="https://raw.githubusercontent.com/bird70/ask-the-data/gh-pages/assets/images/diagrams/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_2.svg" alt="diagram" onerror="this.onerror=null;this.src='{{ '/assets/images/diagrams/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_2.svg' | absolute_url }}'" />
+<img src="https://raw.githubusercontent.com/bird70/ask-the-data/gh-pages/assets/images/diagrams/_posts_2025-11-28-Enterprise-CICD-GitHub-Actions.md_2.svg" alt="diagram" onerror="this.onerror=null;this.src='{{ '/assets/images/Enterprise-CICD-GitHub-Actions_md_2.svg' | absolute_url }}'" />
 
 ```yaml
 - name: Download tiles service task definition
@@ -623,7 +623,7 @@ This saves CI minutes and reduces noise on pull requests that don't affect infra
 Add a status badge to your README:
 
 ```markdown
-![CI/CD Pipeline](https://github.com/username/repo/actions/workflows/deploy.yml/badge.svg)
+![CI/CD Pipeline](https://github.com/bird70/repo/actions/workflows/deploy.yml/badge.svg)
 ```
 
 This provides at-a-glance visibility into pipeline health.
