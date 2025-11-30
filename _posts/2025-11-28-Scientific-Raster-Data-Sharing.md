@@ -27,7 +27,7 @@ header:
 excerpt: "Building a production-ready platform for sharing large scientific raster datasets. From NetCDF files to interactive map tiles and timeseries APIs, with automated ingestion, STAC cataloging, and distributed computing."
 ---
 
-I recently completed a platform for sharing scientific raster data—the kind of multi-dimensional datasets that climate scientists, earth observation researchers, and environmental analysts work with daily. These NetCDF files can be massive, difficult to query, and challenging to serve over the web. This project tackles those problems head-on, transforming unwieldy data files into accessible, queryable resources through a modern cloud-native architecture.
+I recently completed a platform for sharing scientific raster data—the kind of multi-dimensional datasets that climate scientists, earth observation researchers, and environmental analysts work with daily. These NetCDF files can be massive, difficult to query, and challenging to serve over the web. This project tackles those problems, transforming unwieldy data files into accessible, queryable resources through a modern cloud-native architecture.
 
 ## The Problem: NetCDF Files Are Hard to Share
 
@@ -40,46 +40,6 @@ The challenges are clear:
 - **Performance**: Reading from NetCDF over HTTP is slow without optimization
 
 Traditional approaches—FTP servers, direct file downloads—don't scale for modern web applications or interactive analysis. Users need APIs that return exactly what they need: a map tile, a timeseries chart, a spatial subset.
-
-![Placeholder: Architecture diagram showing data flow from NetCDF upload to API endpoints]
-
-## The Solution: A Multi-Format, API-First Platform
-
-The platform addresses these challenges through a dual-format storage strategy and automated processing pipeline. When a NetCDF file is uploaded, it's automatically converted into two cloud-optimized formats:
-
-**Cloud-Optimized GeoTIFF (COG)** for spatial queries:
-- Optimized for reading specific spatial regions
-- Supports efficient map tile generation
-- Internal tiling and overviews for fast access at multiple zoom levels
-
-**Zarr** for temporal queries:
-- Chunked, compressed array storage
-- Optimized for reading timeseries at specific locations
-- Enables parallel processing across time dimensions
-
-This dual-format approach means the right tool for each job: COG for "show me a map" and Zarr for "show me how this location changed over time."
-
-### What the Platform Enables
-
-**For End Users:**
-- **Interactive map tiles**: Visualize any variable at any timestamp through standard web mapping libraries
-- **Timeseries extraction**: Query any point location to get its complete temporal profile
-- **STAC catalog**: Search and discover datasets by location, time, and metadata
-- **RESTful API**: Standard HTTP endpoints that work with any client
-
-**For Data Providers:**
-- **Automated ingestion**: Drop NetCDF files in S3, everything else happens automatically
-- **Format conversion**: NetCDF → Zarr + COG without manual intervention
-- **Metadata extraction**: STAC items created and indexed automatically
-- **Scalable processing**: Handles files from megabytes to gigabytes
-
-![Placeholder: Screenshot of map tiles showing raster data visualization]
-
-## Architecture: How It Works
-
-The platform is built on AWS using a serverless and container-based architecture that balances cost, performance, and maintainability.
-
-### Ingestion Pipeline
 
 #### High-Level Architecture
 
@@ -135,6 +95,45 @@ The platform is built on AWS using a serverless and container-based architecture
        │ NetCDF  │
        └─────────┘
 ```
+
+## The Solution: A Multi-Format, API-First Platform
+
+The platform addresses these challenges through a dual-format storage strategy and automated processing pipeline. When a NetCDF file is uploaded, it's automatically converted into two cloud-optimized formats:
+
+**Cloud-Optimized GeoTIFF (COG)** for spatial queries:
+- Optimized for reading specific spatial regions
+- Supports efficient map tile generation
+- Internal tiling and overviews for fast access at multiple zoom levels
+
+**Zarr** for temporal queries:
+- Chunked, compressed array storage
+- Optimized for reading timeseries at specific locations
+- Enables parallel processing across time dimensions
+
+This dual-format approach means the right tool for each job: COG for "show me a map" and Zarr for "show me how this location changed over time."
+
+### What the Platform Enables
+
+**For End Users:**
+- **Interactive map tiles**: Visualize any variable at any timestamp through standard web mapping libraries
+- **Timeseries extraction**: Query any point location to get its complete temporal profile
+- **STAC catalog**: Search and discover datasets by location, time, and metadata
+- **RESTful API**: Standard HTTP endpoints that work with any client
+
+**For Data Providers:**
+- **Automated ingestion**: Drop NetCDF files in S3, everything else happens automatically
+- **Format conversion**: NetCDF → Zarr + COG without manual intervention
+- **Metadata extraction**: STAC items created and indexed automatically
+- **Scalable processing**: Handles files from megabytes to gigabytes
+
+![Placeholder: Screenshot of map tiles showing raster data visualization]
+
+## Architecture: How It Works
+
+The platform is built on AWS using a serverless and container-based architecture that balances cost, performance, and maintainability.
+
+### Ingestion Pipeline
+
 
 ### Component Interaction Flow
 
