@@ -27,8 +27,8 @@ function ensureDir(dir) {
 
 const root = process.cwd();
 const files = walk(root).filter(f => f.endsWith('.md') || f.endsWith('.markdown'));
-// Write intermediate .mmd files into assets/images/diagrams/mmd
-const outDir = path.join(root, 'assets', 'images', 'diagrams', 'mmd');
+// Write intermediate .mmd files into assets/images/mmd
+const outDir = path.join(root, 'assets', 'images', 'mmd');
 ensureDir(outDir);
 
 for (const file of files) {
@@ -45,22 +45,28 @@ for (const file of files) {
       const body = m[1];
       if (!body.trim()) continue;
 
-      const base = sanitize(rel) + '_' + (localIndex++);
+      // Create a friendlier filename: strip leading dates from post filenames
+      // e.g. "2025-11-28-Enterprise-CICD-GitHub-Actions.md" -> "Enterprise-CICD-GitHub-Actions_md_0.svg"
+      const origBase = path.basename(rel); // include extension
+      const display = origBase.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+      const ext = path.extname(display); // .md or .markdown
+      const nameNoExt = display.slice(0, -ext.length);
+      const base = sanitize(nameNoExt) + '_' + ext.replace('.', '') + '_' + (localIndex++);
       const outMmd = path.join(outDir, base + '.mmd');
       fs.writeFileSync(outMmd, body, 'utf8');
       console.log('WROTE', outMmd);
 
       const svgName = base + '.svg';
       // Insert an HTML <img> that first tries absolute_url and falls back to relative_url on error
-      const absUrl = `{{ "/assets/images/diagrams/${svgName}" | absolute_url }}`;
-      const relUrl = `{{ "/assets/images/diagrams/${svgName}" | relative_url }}`;
+      const absUrl = `{{ "/assets/images/${svgName}" | absolute_url }}`;
+      const relUrl = `{{ "/assets/images/${svgName}" | relative_url }}`;
       const imageLine = `<img src="${absUrl}" alt="diagram" onerror="this.onerror=null;this.src='${relUrl}'" />`;
 
       const matchEnd = m.index + m[0].length;
       newContent += content.slice(lastIndex, matchEnd);
 
       const lookahead = content.slice(matchEnd, matchEnd + 400);
-      const alreadyHasImage = lookahead.includes(svgName) || /!\[.*\]\(.+assets\/images\/diagrams\/.+\)/.test(lookahead);
+      const alreadyHasImage = lookahead.includes(svgName) || /!\[.*\]\(.+assets\/images\/.+\)/.test(lookahead);
 
       if (!alreadyHasImage) {
         newContent += '\n\n' + imageLine + '\n';
