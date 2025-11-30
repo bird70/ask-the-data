@@ -1,0 +1,13 @@
+graph LR
+    A[Checkout Code] --> B[Install terraform-docs]
+    B --> C[Generate Docs for Each Module]
+    C --> D[Install Checkov]
+    D --> E[Run Security Scan]
+    E --> F{Critical Issues?}
+    F -->|Yes| G[Fail Build]
+    F -->|No| H[Commit Documentation]
+    H --> I[Push Changes]
+    
+    style F fill:#f5e1e1
+    style G fill:#ff6b6b
+    style I fill:#51cf66
