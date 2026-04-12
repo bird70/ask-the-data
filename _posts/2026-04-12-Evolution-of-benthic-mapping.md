@@ -5,7 +5,7 @@ read_time: true
 comments: false
 share: true
 related: true
-title: From Rules to Learning: The Evolution of Benthic Habitat Classification
+title: From Rules to Learning - The Evolution of Benthic Habitat Classification
 date: 2026-04-12
 categories:
   - geospatial
