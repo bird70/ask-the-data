@@ -6,7 +6,6 @@ comments: false
 share: true
 related: true
 title: From Rules to Learning: The Evolution of Benthic Habitat Classification
-subtitle: A technical journey combining domain expertise with machine learning for seafloor mapping
 date: 2026-04-12
 categories:
   - geospatial
@@ -24,9 +23,6 @@ tags:
   - model-selection
 toc: true
 toc_sticky: true
-<!-- header:
-  image: /assets/images/raster_platform_architecture.svg 
-  teaser: /assets/images/raster_platform_architecture.svg -->
 excerpt: "Underwater seafloor habitat classification is a problem with immediate practical consequences. The challenge isn't availability of data — modern multibeam echo sounders (MBES) capture rich acoustic information at high resolution — but rather **how to extract meaningful habitat distinctions from raw bathymetry and acoustic backscatter**."
 ---
 
